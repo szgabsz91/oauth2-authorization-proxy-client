@@ -22,5 +22,4 @@ deploy:
   github_token: $GITHUB_TOKEN
   local_dir: packages/angularjs/demo/dist
   on:
-    only:
-      - master
+    branch: master

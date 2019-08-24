@@ -6,7 +6,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = ({ rootFolder, useHTML, useSCSS, useImages, isAngularJS, excludeFromInstrumentation, env }) => {
     const result = {
-        entry: './src/index.js',
+        entry: path.resolve(rootFolder, 'src', 'index.js'),
         mode: env.includes('test') || env === 'development' ? 'development' : 'production',
         devtool: env.includes('test') ? 'inline-source-map' : 'source-map',
         output: {
@@ -32,9 +32,6 @@ module.exports = ({ rootFolder, useHTML, useSCSS, useImages, isAngularJS, exclud
     if (useHTML) {
         result.module.rules.push({
             test: /\.html$/,
-            exclude: [
-                path.resolve(rootFolder, 'src', 'index.html')
-            ],
             use: isAngularJS ? [
                 'ngtemplate-loader',
                 'html-loader'
@@ -118,13 +115,19 @@ module.exports = ({ rootFolder, useHTML, useSCSS, useImages, isAngularJS, exclud
             }
         };
         result.plugins.push(new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: path.resolve(rootFolder, 'src', 'index.ejs'),
+            templateParameters: {
+                'BASE_URL': '/'
+            },
         }));
     }
 
     if (env === 'production') {
         result.plugins.push(new HtmlWebpackPlugin({
-            template: './src/index.html',
+            template: path.resolve(rootFolder, 'src', 'index.ejs'),
+            templateParameters: {
+                'BASE_URL': 'https://szgabsz91.github.io/oauth2-authorization-proxy-client/'
+            },
             minify: {
                 collapseWhitespace: true,
                 removeComments: true,
