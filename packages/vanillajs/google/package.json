@@ -1,0 +1,24 @@
+{
+  "name": "@szgabsz91/oauth2-authorization-proxy-client-vanillajs-google",
+  "version": "1.0.0",
+  "description": "Google provider of the VanillaJS implementation of the OAuth2 Authorization Proxy Client library",
+  "main": "./src/index.js",
+  "private": true,
+  "repository": "https://github.com/szgabsz91/oauth2-authorization-proxy-client",
+  "author": "szgabsz91",
+  "license": "MIT",
+  "engineStrict": true,
+  "engines": {
+    "node": ">=12.8.1",
+    "yarn": ">=1.17.3"
+  },
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "prebuild": "yarn clean",
+    "build": "cross-env NODE_ENV=production webpack --config ./webpack.config.js",
+    "lint": "eslint ./src/**/*.js",
+    "lint:fix": "eslint --fix ./src/**/*.js",
+    "test": "cross-env NODE_ENV=test karma start ./karma.config.js --single-run",
+    "test:watch": "cross-env NODE_ENV=testwatch karma start ./karma.config.js"
+  }
+}
