@@ -16,7 +16,7 @@
     "build": "lerna exec yarn build",
     "lint": "lerna exec yarn lint",
     "lint:fix": "lerna exec yarn lint:fix",
-    "test": "lerna exec --concurrency 1 -- yarn test",
+    "test": "lerna exec -- yarn test",
     "start:angularjs": "lerna run --scope @szgabsz91/oauth2-authorization-proxy-client-angularjs-demo --stream start"
   },
   "devDependencies": {
