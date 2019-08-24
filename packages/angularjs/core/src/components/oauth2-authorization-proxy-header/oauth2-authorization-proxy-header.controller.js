@@ -1,4 +1,5 @@
 export default function OAuth2AuthorizationProxyHeaderComponentController($injector, $rootScope, $window, OAuth2AuthorizationProxyService, OAuth2AuthorizationProxyConfiguration) {
+    'ngInject';
 
     this.preferredOAuth2Provider = null;
     this.userInfo = null;

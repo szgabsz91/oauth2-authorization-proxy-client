@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = ({ libraryName, rootFolder, useHTML, useSCSS, useImages, isAngularJS, excludeFromInstrumentation, env }) => {
     const result = {
-        entry: './src/index.js',
+        entry: path.resolve(rootFolder, 'src', 'index.js'),
         mode: env.includes('test') ? 'development' : 'production',
         devtool: env.includes('test') ? 'inline-source-map' : 'source-map',
         output: {

@@ -13,7 +13,7 @@ export default function ImgDirective($rootScope, $window, OAuth2AuthorizationPro
             scope.$on('$destroy', unsubscribe);
 
             function reevaluateSource(src) {
-                const url = new URL(src, $window.location.origin);
+                const url = new URL(src, $window.location.href);
                 const isProtectedImageUrl = OAuth2AuthorizationProxyConfiguration.protectedImageUrlPredicate(url);
                 if (!isProtectedImageUrl) {
                     return;
