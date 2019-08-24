@@ -1,0 +1,16 @@
+@import "~angular-material/angular-material.scss";
+@import "~angular-material/layouts/angular-material.layout-attributes.scss";
+
+oauth2-authorization-proxy-demo-app {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+md-sidenav md-list-item {
+    width: 80%;
+}
+
+.text-center {
+    text-align: center;
+}
