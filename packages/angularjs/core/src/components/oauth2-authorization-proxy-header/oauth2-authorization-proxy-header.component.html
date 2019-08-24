@@ -1,0 +1,63 @@
+<md-menu ng-if="$ctrl.userInfo">
+    <div
+        flex
+        layout="row"
+        layout-align="end center"
+        class="oauth2-authorization-proxy-header"
+    >
+        <img
+            ng-src="{{ $ctrl.profilePictureUrl }}"
+            alt="{{ :: 'OAuth2AuthorizationProxy.Core.Header.ProfilePicture.alt' | translate }}"
+            class="user-avatar"
+        >
+        </md-button>
+        <span class="username">{{ $ctrl.userInfo.name }}</span>
+
+        <md-button
+            class="md-icon-button"
+            aria-label="{{ :: 'OAuth2AuthorizationProxy.Core.Header.UserSettings.label' }}"
+            ng-click="$mdMenu.open($event)"
+        >
+            <md-icon>more_vert</md-icon>
+        </md-button>
+    </div>
+
+    <md-menu-content>
+        <md-menu-item>
+            <md-button ng-click="$ctrl.onViewProfileButtonClicked()">
+                <span md-menu-align-target>{{ :: 'OAuth2AuthorizationProxy.Core.Header.Menu.ViewProfile.text' | translate }}</span>
+            </md-button>
+        </md-menu-item>
+        <md-menu-item>
+            <md-button ng-click="$ctrl.onLogoutButtonClicked()">
+                <span md-menu-align-target>{{ :: 'OAuth2AuthorizationProxy.Core.Header.Menu.Logout.text' | translate }}</span>
+            </md-button>
+        </md-menu-item>
+    </md-menu-content>
+</md-menu>
+
+<div ng-if="!$ctrl.userInfo">
+    <div
+        ng-if="$ctrl.preferredOAuth2Provider"
+        flex
+        layout="row"
+        layout-align="end center"
+        class="oauth2-authorization-proxy-header--preferred-oauth2-provider"
+    >
+        {{ :: 'OAuth2AuthorizationProxy.Core.Header.Login.LoginWith' | translate }}
+        <img
+            ng-src="{{ $ctrl.preferredOAuth2Provider.logoImageUrl }}"
+            alt="{{ $ctrl.preferredOAuth2Provider.id }}"
+            class="oauth2-provider-logo"
+            ng-click="$ctrl.onLoginButtonClicked($ctrl.preferredOAuth2Provider)"
+        >
+        {{ :: 'OAuth2AuthorizationProxy.Core.Header.Login.Or' | translate }}
+        <md-button ui-sref="{{ :: $ctrl.loginStateName }}">{{ :: 'OAuth2AuthorizationProxy.Core.Header.Login.AnotherProvider' | translate }}</md-button>
+    </div>
+    <div
+        ng-if="!$ctrl.preferredOAuth2Provider"
+        class="oauth2-authorization-proxy-header--no-preferred-oauth2-provider"
+    >
+        <md-button ui-sref="{{ :: $ctrl.loginStateName }}">{{ :: 'OAuth2AuthorizationProxy.Core.Header.Login.Login' | translate }}</md-button>
+    </div>
+</div>

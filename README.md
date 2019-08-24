@@ -16,3 +16,4 @@ The main responsibilities are:
 Currently supported technology stacks:
 
 * VanillaJS
+* AngularJS
