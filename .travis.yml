@@ -9,3 +9,9 @@ before_install:
 
 install:
   - yarn
+  - yarn bootstrap
+
+script:
+  - yarn lint
+  - yarn test
+  - yarn build
