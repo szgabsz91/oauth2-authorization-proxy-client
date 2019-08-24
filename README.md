@@ -18,4 +18,4 @@ Currently supported technology stacks:
 * VanillaJS
 * AngularJS
 
-The AngularJS demo application can be viewed here: [https://szgabsz91.github.io/oauth2-authorization-proxy](https://szgabsz91.github.io/oauth2-authorization-proxy).
+The AngularJS demo application can be viewed here: [https://szgabsz91.github.io/oauth2-authorization-proxy-client/](https://szgabsz91.github.io/oauth2-authorization-proxy-client/).
