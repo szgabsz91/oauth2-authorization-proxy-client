@@ -18,4 +18,4 @@ Currently supported technology stacks:
 * VanillaJS
 * AngularJS
 
-The AngularJS demo application can be viewed here: [https://szgabsz91.github.io/oauth2-authorization-proxy-client](https://szgabsz91.github.io/oauth2-authorization-proxy-client).
+The AngularJS demo application that uses mock data can be viewed here: [https://szgabsz91.github.io/oauth2-authorization-proxy-client](https://szgabsz91.github.io/oauth2-authorization-proxy-client). You can authenticate with Facebook or Google, but due to the mock data, profile information will not reflect your actual profile. However, without authentication, you will get HTTP 401 for REST requests and protected image requests.
