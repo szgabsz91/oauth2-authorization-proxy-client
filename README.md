@@ -12,3 +12,7 @@ The main responsibilities are:
 * In case of images, adds the `access_token` and `oauth2_provider` query parameters.
 * Provides components to login and logout with several supported OAuth2 providers such as Facebook and Google.
 * Stores the authentication information in local storage.
+
+Currently supported technology stacks:
+
+* VanillaJS
