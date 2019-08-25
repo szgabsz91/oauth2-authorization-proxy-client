@@ -1,6 +1,6 @@
 {
   "name": "@szg/oauth2-authorization-proxy-client-angularjs-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Core of the AngularJS implementation of the OAuth2 Authorization Proxy Client library",
   "keywords": [
     "oauth2",
@@ -45,7 +45,7 @@
     "test:watch": "cross-env NODE_ENV=testwatch karma start ./karma.config.js"
   },
   "dependencies": {
-    "@szg/oauth2-authorization-proxy-client-vanillajs-core": "1.0.0",
+    "@szg/oauth2-authorization-proxy-client-vanillajs-core": "1.0.1",
     "angular-translate": "2.18.1"
   },
   "peerDependencies": {

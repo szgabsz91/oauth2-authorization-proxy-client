@@ -1,6 +1,6 @@
 {
   "name": "@szg/oauth2-authorization-proxy-client-vanillajs-facebook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Facebook provider of the VanillaJS implementation of the OAuth2 Authorization Proxy Client library",
   "keywords": [
     "oauth2",

@@ -1,6 +1,6 @@
 {
   "name": "@szg/oauth2-authorization-proxy-client-vanillajs-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Core of the VanillaJS implementation of the OAuth2 Authorization Proxy Client library",
   "keywords": [
     "oauth2",
