@@ -1,6 +1,6 @@
 {
   "name": "@szg/oauth2-authorization-proxy-client-vanillajs-google",
-  "version": "1.0.0",
+  "version": "1.0.0-rc1",
   "description": "Google provider of the VanillaJS implementation of the OAuth2 Authorization Proxy Client library",
   "main": "./src/index.js",
   "private": true,

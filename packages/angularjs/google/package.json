@@ -1,6 +1,6 @@
 {
   "name": "@szg/oauth2-authorization-proxy-client-angularjs-google",
-  "version": "1.0.0",
+  "version": "1.0.0-rc1",
   "description": "Google provider of the AngularJS implementation of the OAuth2 Authorization Proxy Client library",
   "main": "./src/index.js",
   "private": true,
@@ -22,11 +22,11 @@
     "test:watch": "cross-env NODE_ENV=testwatch karma start ./karma.config.js"
   },
   "dependencies": {
-    "@szg/oauth2-authorization-proxy-client-vanillajs-google": "1.0.0",
+    "@szg/oauth2-authorization-proxy-client-vanillajs-google": "1.0.0-rc1",
     "angular-translate": "2.18.1"
   },
   "peerDependencies": {
-    "@szg/oauth2-authorization-proxy-client-angularjs-core": "1.0.0",
+    "@szg/oauth2-authorization-proxy-client-angularjs-core": "1.0.0-rc1",
     "@uirouter/angularjs": "1.0.22",
     "angular": "1.7.8",
     "angular-animate": "1.7.8",
@@ -34,7 +34,7 @@
     "angular-material": "1.1.20"
   },
   "devDependencies": {
-    "@szg/oauth2-authorization-proxy-client-angularjs-core": "1.0.0",
+    "@szg/oauth2-authorization-proxy-client-angularjs-core": "1.0.0-rc1",
     "angular-mocks": "1.7.8"
   }
 }
