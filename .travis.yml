@@ -16,10 +16,18 @@ script:
   - yarn test
   - yarn build
 
+before_deploy:
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
+
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: packages/angularjs/demo/dist
-  on:
-    branch: master
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    local_dir: packages/angularjs/demo/dist
+    on:
+      branch: master
+  - provider: script
+    skip_cleanup: true
+    script: "npx lerna publish from-package --yes"
+    on:
+      tags: true

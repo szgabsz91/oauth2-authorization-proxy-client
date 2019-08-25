@@ -1,7 +1,8 @@
 const path = require('path');
 
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = ({ libraryName, rootFolder, useHTML, useSCSS, useImages, isAngularJS, excludeFromInstrumentation, env }) => {
     const result = {
@@ -64,7 +65,10 @@ module.exports = ({ libraryName, rootFolder, useHTML, useSCSS, useImages, isAngu
     if (useImages) {
         result.module.rules.push({
             test: /\.(png|jpe?g|gif)$/i,
-            loader: 'file-loader'
+            loader: 'file-loader',
+            options: {
+                name: 'assets/[name].[ext]'
+            }
         });
     }
 
@@ -103,6 +107,16 @@ module.exports = ({ libraryName, rootFolder, useHTML, useSCSS, useImages, isAngu
                 })
             ]
         };
+
+        if (useSCSS) {
+            result.optimization.minimizer.push(new OptimizeCSSAssetsWebpackPlugin({
+                cssProcessorOptions: {
+                    map: {
+                        inline: false
+                    }
+                }
+            }));
+        }
     }
 
     return result;
