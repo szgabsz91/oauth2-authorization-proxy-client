@@ -1,5 +1,5 @@
 {
-  "name": "@szgabsz91/oauth2-authorization-proxy-client-angularjs-demo",
+  "name": "@szg/oauth2-authorization-proxy-client-angularjs-demo",
   "version": "1.0.0",
   "description": "Demo of the AngularJS implementation of the OAuth2 Authorization Proxy Client library",
   "main": "./src/index.js",
@@ -24,9 +24,9 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack.config.js"
   },
   "dependencies": {
-    "@szgabsz91/oauth2-authorization-proxy-client-angularjs-core": "1.0.0",
-    "@szgabsz91/oauth2-authorization-proxy-client-angularjs-facebook": "1.0.0",
-    "@szgabsz91/oauth2-authorization-proxy-client-angularjs-google": "1.0.0",
+    "@szg/oauth2-authorization-proxy-client-angularjs-core": "1.0.0",
+    "@szg/oauth2-authorization-proxy-client-angularjs-facebook": "1.0.0",
+    "@szg/oauth2-authorization-proxy-client-angularjs-google": "1.0.0",
     "@uirouter/angularjs": "1.0.22",
     "angular": "1.7.8",
     "angular-animate": "1.7.8",

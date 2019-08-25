@@ -1,5 +1,5 @@
 {
-  "name": "@szgabsz91/oauth2-authorization-proxy-client-angularjs-facebook",
+  "name": "@szg/oauth2-authorization-proxy-client-angularjs-facebook",
   "version": "1.0.0",
   "description": "Facebook provider of the AngularJS implementation of the OAuth2 Authorization Proxy Client library",
   "main": "./src/index.js",
@@ -22,18 +22,18 @@
     "test:watch": "cross-env NODE_ENV=testwatch karma start ./karma.config.js"
   },
   "dependencies": {
-    "@szgabsz91/oauth2-authorization-proxy-client-vanillajs-facebook": "1.0.0",
+    "@szg/oauth2-authorization-proxy-client-vanillajs-facebook": "1.0.0",
     "angular-translate": "2.18.1"
   },
   "peerDependencies": {
-    "@szgabsz91/oauth2-authorization-proxy-client-angularjs-core": "1.0.0",
+    "@szg/oauth2-authorization-proxy-client-angularjs-core": "1.0.0",
     "angular": "1.7.8",
     "angular-animate": "1.7.8",
     "angular-aria": "1.7.8",
     "angular-material": "1.1.20"
   },
   "devDependencies": {
-    "@szgabsz91/oauth2-authorization-proxy-client-angularjs-core": "1.0.0",
+    "@szg/oauth2-authorization-proxy-client-angularjs-core": "1.0.0",
     "angular-mocks": "1.7.8"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@szgabsz91/oauth2-authorization-proxy-client",
+  "name": "@szg/oauth2-authorization-proxy-client",
   "version": "1.0.0",
   "description": "Client libraries for OAuth2 Authorization Proxy",
   "private": true,
@@ -17,7 +17,7 @@
     "lint": "lerna exec yarn lint",
     "lint:fix": "lerna exec yarn lint:fix",
     "test": "lerna exec -- yarn test",
-    "start:angularjs": "lerna run --scope @szgabsz91/oauth2-authorization-proxy-client-angularjs-demo --stream start"
+    "start:angularjs": "lerna run --scope @szg/oauth2-authorization-proxy-client-angularjs-demo --stream start"
   },
   "devDependencies": {
     "@babel/core": "7.5.5",

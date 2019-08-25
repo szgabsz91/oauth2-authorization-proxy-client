@@ -5,9 +5,9 @@ import angularSanitize from 'angular-sanitize';
 import angularTranslate from 'angular-translate';
 import uiRouter from '@uirouter/angularjs';
 
-import core from '@szgabsz91/oauth2-authorization-proxy-client-angularjs-core';
-import facebook from '@szgabsz91/oauth2-authorization-proxy-client-angularjs-facebook';
-import google from '@szgabsz91/oauth2-authorization-proxy-client-angularjs-google';
+import core from '@szg/oauth2-authorization-proxy-client-angularjs-core';
+import facebook from '@szg/oauth2-authorization-proxy-client-angularjs-facebook';
+import google from '@szg/oauth2-authorization-proxy-client-angularjs-google';
 
 import OAuth2AuthorizationProxyDemoAppConfiguration, { constantName as oauth2AuthorizationProxyDemoAppConfigurationConstantName } from './configuration/oauth2-authorization-proxy-demo-app.configuration';
 import OAuth2AuthorizationProxyDemoAppConfig from './index.config';
