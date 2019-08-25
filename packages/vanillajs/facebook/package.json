@@ -1,12 +1,36 @@
 {
   "name": "@szg/oauth2-authorization-proxy-client-vanillajs-facebook",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0",
   "description": "Facebook provider of the VanillaJS implementation of the OAuth2 Authorization Proxy Client library",
-  "main": "./src/index.js",
-  "private": true,
-  "repository": "https://github.com/szgabsz91/oauth2-authorization-proxy-client",
-  "author": "szgabsz91",
+  "keywords": [
+    "oauth2",
+    "facebook",
+    "vanillajs",
+    "security"
+  ],
+  "homepage": "https://github.com/szgabsz91/oauth2-authorization-proxy-client",
+  "bugs": {
+    "url": "https://github.com/szgabsz91/oauth2-authorization-proxy-client/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/szgabsz91/oauth2-authorization-proxy-client"
+  },
+  "author": {
+    "name": "Gabor Szabo",
+    "email": "szgabsz91@gmail.com",
+    "url": "https://github.com/szgabsz91"
+  },
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/oauth2-authorization-proxy-client-vanillajs-facebook.js",
+  "module": "./src/index.js",
+  "style": "./dist/oauth2-authorization-proxy-client-vanillajs-facebook.css",
+  "files": [
+    "dist"
+  ],
   "engineStrict": true,
   "engines": {
     "node": ">=12.8.1",

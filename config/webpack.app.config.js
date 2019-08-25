@@ -2,6 +2,7 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = ({ rootFolder, useHTML, useSCSS, useImages, isAngularJS, excludeFromInstrumentation, env }) => {
@@ -59,7 +60,10 @@ module.exports = ({ rootFolder, useHTML, useSCSS, useImages, isAngularJS, exclud
     if (useImages) {
         result.module.rules.push({
             test: /\.(png|jpe?g|gif)$/i,
-            loader: 'file-loader'
+            loader: 'file-loader',
+            options: {
+                name: 'assets/[name].[ext]'
+            }
         });
     }
 
@@ -90,7 +94,7 @@ module.exports = ({ rootFolder, useHTML, useSCSS, useImages, isAngularJS, exclud
         }
     }
 
-    if (!env.includes('test')) {
+    if (!env.includes('test') && env !== 'development') {
         result.optimization = {
             minimizer: [
                 new UglifyJsPlugin({
@@ -98,6 +102,16 @@ module.exports = ({ rootFolder, useHTML, useSCSS, useImages, isAngularJS, exclud
                 })
             ]
         };
+
+        if (useSCSS) {
+            result.optimization.minimizer.push(new OptimizeCSSAssetsWebpackPlugin({
+                cssProcessorOptions: {
+                    map: {
+                        inline: false
+                    }
+                }
+            }));
+        }
     }
 
     if (env === 'development') {
