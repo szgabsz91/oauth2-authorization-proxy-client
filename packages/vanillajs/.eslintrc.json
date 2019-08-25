@@ -1,0 +1,3 @@
+{
+    "extends": "@szg/eslint-config/vanillajs"
+}
