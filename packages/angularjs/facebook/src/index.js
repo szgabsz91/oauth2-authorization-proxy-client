@@ -1,6 +1,6 @@
 import angularTranslate from 'angular-translate';
-import core from '@szgabsz91/oauth2-authorization-proxy-client-angularjs-core';
-import OAuth2AuthorizationProxyFacebook from '@szgabsz91/oauth2-authorization-proxy-client-vanillajs-facebook';
+import core from '@szg/oauth2-authorization-proxy-client-angularjs-core';
+import OAuth2AuthorizationProxyFacebook from '@szg/oauth2-authorization-proxy-client-vanillajs-facebook';
 
 import { vanillaConstantName } from './configuration/oauth2-authorization-proxy-facebook.configuration';
 import OAuth2AuthorizationProxyFacebookConfig from './index.config';

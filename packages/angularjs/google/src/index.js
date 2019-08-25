@@ -1,6 +1,6 @@
 import angularTranslate from 'angular-translate';
-import core from '@szgabsz91/oauth2-authorization-proxy-client-angularjs-core';
-import OAuth2AuthorizationProxyGoogle from '@szgabsz91/oauth2-authorization-proxy-client-vanillajs-google';
+import core from '@szg/oauth2-authorization-proxy-client-angularjs-core';
+import OAuth2AuthorizationProxyGoogle from '@szg/oauth2-authorization-proxy-client-vanillajs-google';
 
 import { vanillaConstantName } from './configuration/oauth2-authorization-proxy-google.configuration';
 import OAuth2AuthorizationProxyGoogleConfig from './index.config';

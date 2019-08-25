@@ -1,4 +1,4 @@
-import OAuth2AuthorizationProxyCore from '@szgabsz91/oauth2-authorization-proxy-client-vanillajs-core';
+import OAuth2AuthorizationProxyCore from '@szg/oauth2-authorization-proxy-client-vanillajs-core';
 import { vanillaConstantName } from './configuration/oauth2-authorization-proxy.configuration';
 
 export default function OAuth2AuthorizationProxyCoreConfig($provide, OAuth2AuthorizationProxyConfiguration) {

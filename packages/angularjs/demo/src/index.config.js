@@ -1,4 +1,4 @@
-import { oauth2AuthorizationProxyInterceptorName } from '@szgabsz91/oauth2-authorization-proxy-client-angularjs-core';
+import { oauth2AuthorizationProxyInterceptorName } from '@szg/oauth2-authorization-proxy-client-angularjs-core';
 
 export default function OAuth2AuthorizationProxyDemoAppConfig($httpProvider, OAuth2AuthorizationProxyConfiguration) {
     'ngInject';
