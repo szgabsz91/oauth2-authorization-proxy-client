@@ -9,6 +9,12 @@ module.exports = (excludeFromInstrumentation) => {
         useSCSS: true,
         useImages: true,
         isAngularJS: true,
+        externals: [
+            /@uirouter/,
+            'angular',
+            'angular-translate',
+            '@szg/oauth2-authorization-proxy-client-angularjs-core'
+        ],
         env: process.env.NODE_ENV,
         excludeFromInstrumentation
     });
