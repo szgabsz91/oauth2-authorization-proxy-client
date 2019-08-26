@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-module.exports = ({ rootFolder, useHTML, useSCSS, useImages, isAngularJS, excludeFromInstrumentation, env }) => {
+module.exports = ({ rootFolder, useHTML, useSCSS, useImages, isAngularJS, aliases = {}, excludeFromInstrumentation, env }) => {
     const result = {
         entry: path.resolve(rootFolder, 'src', 'index.js'),
         mode: env.includes('test') || env === 'development' ? 'development' : 'production',
@@ -13,6 +13,11 @@ module.exports = ({ rootFolder, useHTML, useSCSS, useImages, isAngularJS, exclud
         output: {
             path: path.resolve(rootFolder, 'dist'),
             filename: env !== 'production' ? 'js/bundle.js' : 'js/bundle-[chunkhash].js'
+        },
+        resolve: {
+            alias: {
+                ...aliases
+            }
         },
         module: {
             rules: [{

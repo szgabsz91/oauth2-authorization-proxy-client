@@ -8,6 +8,11 @@ module.exports = (excludeFromInstrumentation) => {
         useHTML: true,
         useSCSS: true,
         isAngularJS: true,
+        externals: [
+            /@uirouter/,
+            'angular',
+            'angular-translate'
+        ],
         env: process.env.NODE_ENV,
         excludeFromInstrumentation
     });

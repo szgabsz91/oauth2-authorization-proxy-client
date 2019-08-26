@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-module.exports = ({ libraryName, rootFolder, useHTML, useSCSS, useImages, isAngularJS, excludeFromInstrumentation, env }) => {
+module.exports = ({ libraryName, rootFolder, useHTML, useSCSS, useImages, isAngularJS, externals = [], excludeFromInstrumentation, env }) => {
     const result = {
         entry: path.resolve(rootFolder, 'src', 'index.js'),
         mode: env.includes('test') ? 'development' : 'production',
@@ -16,6 +16,7 @@ module.exports = ({ libraryName, rootFolder, useHTML, useSCSS, useImages, isAngu
             library: libraryName,
             libraryTarget: 'umd'
         },
+        externals: env.includes('test') ? [] : externals,
         module: {
             rules: [{
                 test: /\.js$/,
