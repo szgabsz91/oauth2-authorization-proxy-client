@@ -1,6 +1,6 @@
 {
   "name": "@szg/oauth2-authorization-proxy-client",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Client libraries for OAuth2 Authorization Proxy",
   "keywords": [
     "oauth2",
