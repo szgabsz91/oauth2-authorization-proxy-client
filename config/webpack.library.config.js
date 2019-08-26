@@ -65,10 +65,14 @@ module.exports = ({ libraryName, rootFolder, useHTML, useSCSS, useImages, isAngu
 
     if (useImages) {
         result.module.rules.push({
+            test: /\.(png|jpe?g|gif)$/,
+            loader: 'image-webpack-loader',
+            enforce: 'pre'
+        }, {
             test: /\.(png|jpe?g|gif)$/i,
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
-                name: 'assets/[name].[ext]'
+                limit: 10 * 1024
             }
         });
     }
