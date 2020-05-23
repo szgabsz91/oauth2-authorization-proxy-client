@@ -16,5 +16,6 @@ export default {
         userInfo: 'api/users/me'
     },
     protectedImageUrlPredicate: url => url.origin === location.origin && url.pathname.startsWith('/api'),
-    profilePictureUrlMapper: userInfo => userInfo.profilePictureUrl
+    profilePictureUrlMapper: userInfo => userInfo.profilePictureUrl,
+    redirectDebounceTimeInMilliseconds: 500
 };

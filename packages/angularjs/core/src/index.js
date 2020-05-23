@@ -1,5 +1,8 @@
 import * as angular from 'angular';
 import angularTranslate from 'angular-translate';
+import 'angular-translate-interpolation-messageformat';
+import 'angular-translate-storage-cookie';
+import 'angular-translate-storage-local';
 import uiRouter from '@uirouter/angularjs';
 
 import Oauth2AuthorizationProxyConfiguration, { constantName as oauth2AuthorizationProxyConfigurationConstantName } from './configuration/oauth2-authorization-proxy.configuration';

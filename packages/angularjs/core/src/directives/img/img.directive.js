@@ -1,19 +1,21 @@
 export const directiveName = 'img';
 
-export default function ImgDirective($rootScope, $window, OAuth2AuthorizationProxyService, OAuth2AuthorizationProxyConfiguration) {
+export default function ImgDirective($rootScope, OAuth2AuthorizationProxyService, OAuth2AuthorizationProxyConfiguration) {
     'ngInject';
 
     return {
         restrict: 'E',
         link: function(scope, element, attrs) {
-            attrs.$observe('src', reevaluateSource);
+            attrs.$observe('src', () => reevaluateSource());
 
-            const unsubscribe = $rootScope.$on(OAuth2AuthorizationProxyConfiguration.events.loggedIn, () => reevaluateSource(attrs.src));
+            const unsubscribe = $rootScope.$on(OAuth2AuthorizationProxyConfiguration.events.loggedIn, () => reevaluateSource());
 
             scope.$on('$destroy', unsubscribe);
 
-            function reevaluateSource(src) {
-                const url = new URL(src, $window.location.href);
+            function reevaluateSource() {
+                const src = element[0].src;
+                // TODO: Make it work for / and /something, too with the same BASE
+                const url = new URL(src);
                 const isProtectedImageUrl = OAuth2AuthorizationProxyConfiguration.protectedImageUrlPredicate(url);
                 if (!isProtectedImageUrl) {
                     return;
@@ -26,7 +28,7 @@ export default function ImgDirective($rootScope, $window, OAuth2AuthorizationPro
                 }
                 url.searchParams.set('access_token', accessToken);
                 url.searchParams.set('oauth2_provider', oauth2ProviderId);
-                const newSrc = url.pathname + url.search;
+                const newSrc = `${url.protocol}//${url.host}${url.pathname}${url.search}`;
                 if (newSrc !== src) {
                     attrs.$set('src', newSrc);
                 }
